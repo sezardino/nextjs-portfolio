@@ -1,0 +1,45 @@
+.wrapper {
+  @include section;
+}
+
+.container {
+  @include container;
+
+  display: grid;
+  gap: 2rem;
+  text-align: center;
+
+  @include media-from(576) {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: center;
+    text-align: initial;
+  }
+  @include media-from(768) {
+    padding-top: 2rem;
+  }
+}
+
+.title {
+  @include title;
+}
+
+.subtitle {
+  margin-bottom: var(--mb-2);
+}
+
+.img {
+  justify-self: center;
+
+  & img {
+    width: 200px !important;
+    border-radius: 0.5rem;
+
+    @include media-from(768) {
+      width: 300px !important;
+    }
+
+    @include media-from(991) {
+      width: 450px !important;
+    }
+  }
+}

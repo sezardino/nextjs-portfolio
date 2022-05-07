@@ -1,0 +1,42 @@
+.wrapper {
+  @include section;
+}
+
+.container {
+  @include container;
+
+  display: grid;
+  justify-items: center;
+}
+
+.title {
+  @include title;
+}
+
+.form {
+  @include media-from(576) {
+    width: 360px;
+    padding-top: 2rem;
+  }
+}
+
+.input {
+  width: 100%;
+  font-size: var(--normal-font-size);
+  font-weight: var(--font-semi);
+  padding: 1rem;
+  border-radius: 0.5rem;
+  border: 1.5px solid var(--second-color);
+  outline: none;
+  margin-bottom: var(--mb-4);
+  resize: none;
+
+  &::placeholder {
+    font: inherit;
+  }
+}
+
+.button {
+  display: block;
+  margin-left: auto;
+}

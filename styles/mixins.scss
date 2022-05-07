@@ -1,0 +1,84 @@
+@mixin media-from($breakpoint) {
+  @media (min-width: #{$breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin media-up-to($breakpoint) {
+  @media (max-width: #{$breakpoint}px) {
+    @content;
+  }
+}
+
+@mixin media-from-to($min, $max) {
+  @media (min-width: #{$min}px) and (max-width: #{$max}px) {
+    @content;
+  }
+}
+
+@mixin section {
+  padding-top: 3rem;
+  padding-bottom: 2rem;
+
+  @include media-from(768) {
+    padding-top: 4rem;
+    padding-bottom: 3rem;
+  }
+}
+
+@mixin title {
+  position: relative;
+  font-size: var(--h2-font-size);
+  color: var(--first-color);
+  margin-top: var(--mb-2);
+  margin-bottom: var(--mb-4);
+  text-align: center;
+
+  @include media-from(768) {
+    margin-bottom: var(--mb-6);
+  }
+
+  &::after {
+    position: absolute;
+    content: "";
+    width: 64px;
+    height: 0.18rem;
+    left: 0;
+    right: 0;
+    margin: auto;
+    top: 2rem;
+    background-color: var(--first-color);
+
+    @include media-from(768) {
+      width: 80px;
+      top: 3rem;
+    }
+  }
+}
+
+@mixin container {
+  max-width: 1280px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: var(--mb-2);
+  margin-right: var(--mb-2);
+
+  @include media-from(991) {
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+@mixin main-grid {
+  display: grid;
+  gap: 0 16px;
+  grid-template-columns: repeat(12, 1fr);
+
+  @include media-from(520) {
+    gap: 0 32px;
+  }
+
+  @include media-from(1366) {
+    gap: 0 40px;
+  }
+}
