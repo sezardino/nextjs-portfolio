@@ -1,9 +1,18 @@
 import cn from "classnames";
 import Link from "next/link";
 
+import MenuIcon from "@/assets/icons/menu.svg";
+
 import styles from "./Header.module.scss";
+import { useState } from "react";
 
 export const Header = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const onMenuClick = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   return (
     <header className={styles.wrapper}>
       <nav className={cn(styles.nav)}>
@@ -13,7 +22,7 @@ export const Header = () => {
           </Link>
         </div>
 
-        <div className={styles.menu}>
+        <div className={cn(styles.menu, { [styles.show]: isMenuOpen })}>
           <ul className={styles.list}>
             <li className={styles.item}>
               <Link href="#home">
@@ -43,9 +52,9 @@ export const Header = () => {
           </ul>
         </div>
 
-        <div className={styles.toggle}>
-          <i className="bx bx-menu"></i>
-        </div>
+        <button className={styles.toggle} onClick={onMenuClick}>
+          <MenuIcon width={24} height={24} />
+        </button>
       </nav>
     </header>
   );
