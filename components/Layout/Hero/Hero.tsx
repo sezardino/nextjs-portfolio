@@ -1,5 +1,5 @@
 import styles from "./Hero.module.scss";
-import { Button } from "../UI";
+import { Button } from "@/components";
 
 import HeroImage from "@/assets/images/image-2.png";
 

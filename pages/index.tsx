@@ -8,6 +8,7 @@ import {
   Footer,
   Header,
   Hero,
+  IndexWrapper,
   Skills,
   Works,
 } from "@/components";
@@ -24,6 +25,18 @@ const Home: NextPage<IndexPageData> = (props) => {
     href: socials[name as SocialNames],
   }));
 
+  const indexPageProps = {
+    projects: props.projects,
+    skills: props.skills,
+    socialLinks: socialLinks,
+    repoLink: socials.github,
+    texts: {
+      about: props.authors.aboutText.html,
+      hero: props.authors.heroText.html,
+      skills: props.authors.skillsText.html,
+    },
+  };
+
   return (
     <>
       <Head>
@@ -37,18 +50,7 @@ const Home: NextPage<IndexPageData> = (props) => {
       </Head>
       <Header />
       <main>
-        <Hero
-          contentHTML={props.authors.heroText.html}
-          socialLinks={socialLinks}
-        />
-
-        <About contentHTML={props.authors.aboutText.html} />
-        <Skills
-          skills={props.skills}
-          contentHTML={props.authors.skillsText.html}
-        />
-        <Works repoLink={socials.github} works={props.projects} />
-        <Contact />
+        <IndexWrapper {...indexPageProps} />
       </main>
       <Footer socialLinks={socialLinks} />
     </>

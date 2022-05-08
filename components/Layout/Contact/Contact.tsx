@@ -5,7 +5,7 @@ import CheckIcon from "@/assets/icons/check.svg";
 import XIcon from "@/assets/icons/x.svg";
 import SpinnerIcon from "@/assets/icons/spinner.svg";
 
-import { Button } from "../UI";
+import { Button } from "@/components";
 import { useEffect, useState } from "react";
 import { useForm } from "react-hook-form";
 
