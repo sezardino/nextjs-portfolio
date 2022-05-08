@@ -39,7 +39,10 @@ export interface Meta {
 export interface Project {
   name: string;
   id: string;
-  slug: string;
+  description: string;
+  stack: string[];
+  repo: string;
+  view: string;
   preview: {
     width: number;
     height: number;

@@ -1,0 +1,31 @@
+.modal {
+  display: none;
+}
+
+.open {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: var(--z-fixed);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inner {
+  max-width: 90vw;
+  padding: 16px;
+  background-color: white;
+  border-radius: 12px;
+
+  @include media-from(576) {
+    padding: 24px;
+  }
+
+  @include media-from(991) {
+    padding: 32px;
+  }
+}

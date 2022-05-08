@@ -2,7 +2,10 @@ export const projects = `
   projects {
     name
     id
-    slug
+    stack
+    description
+    repo
+    view
     preview {
       width
       height

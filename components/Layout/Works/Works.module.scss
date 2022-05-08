@@ -27,24 +27,28 @@
   @include title;
 }
 
-.img {
+.button {
+  margin-top: 25px;
+  align-self: center;
+}
+
+.trigger {
+  background-color: transparent;
+  border: none;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   box-shadow: 0px 4px 25px rgba(14, 36, 49, 0.15);
   border-radius: 0.5rem;
   overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: center;
 
-  & img {
+  img {
     transition: 1s;
+    width: 100%;
 
     &:hover {
       transform: scale(1.1);
     }
   }
-}
-
-.button {
-  margin-top: 25px;
-  align-self: center;
 }
